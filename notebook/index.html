@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+    <script type="text/javascript" defer src="js/model.js"></script>
+    <script type="text/javascript" defer src="js/view.js"></script>
+    <script type="text/javascript" defer src="js/controller.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="section">
+        <div class="container">
+            <h1 class="title">Notebook</h1>
+            <div id="fieldTitle" class="field">
+                <label class="label">Title</label>
+                <div class="control">
+                    <input id="title" class="input" type="text" placeholder="Note title" required>
+                </div>
+                <p class="help is-hidden">Title is required.</p>
+            </div>
+
+            <div id="fieldColor" class="field">
+                <label class="label">Color</label>
+                <div class="control">
+                    <div class="select">
+                        <select id="color" required>
+                            <option value="" disabled selected>Select color</option>
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                        </select>
+                    </div>
+                </div>
+                <p class="help is-hidden">Color is required.</p>
+            </div>
+
+            <div id="fieldText" class="field">
+                <label class="label">Text</label>
+                <div class="control">
+                    <textarea id="text" class="textarea" placeholder="Your note..." required></textarea>
+                </div>
+                <p class="help is-hidden">Text is required.</p>
+            </div>
+
+            <div class="control">
+                <button id="addNote" class="button is-primary">Add Note</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div id="notesContainer" class="container">
+        </div>
+    </div>
+</body>
+</html>

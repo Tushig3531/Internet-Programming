@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TODO list</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body> 
+    <div class="container">
+        <h1>TODO List</h1>
+        <div class="container">
+            <form id="newTask">
+            <div>
+                <div>
+                    <label for="title">Task</label>
+                    <input id="title" required />
+                </div>
+
+                <div>
+                    <label for="assignedTo">Assigned to</label>
+                    <select id="assignedTo"></select>
+                </div>
+
+                <div>
+                    <label for="priority">Priority</label>
+                    <select id="priority"></select>
+                </div>
+
+                <div>
+                    <label for="dueDate">Due date</label>
+                    <input type="date" id="dueDate" required />
+                </div>
+            </div>
+            <div>
+                <button type="button" id="addTaskBtn" onclick="addTask()">Add task</button>
+            </div>
+        </form>
+        <div id="feedbackMessage" class="message"></div>
+    </div>
+    </div>
+    
+
+    <div class="container">
+        <input type="checkbox" id="clearAllCheckbox" onclick="clearAllTasks()" />
+        <label for="clearAllCheckbox">Clear All Tasks</label>
+        <table id="taskList">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Task</th>
+                    <th>Assigned to</th>
+                    <th>Priority</th>
+                    <th>Due date</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>

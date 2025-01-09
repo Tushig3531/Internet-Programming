@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Admin Login - Farm to Table{% endblock %}
+{% block content %}
+<h1>Admin Login</h1>
+<form method="POST" action="{{ url_for('login') }}" class="login-form">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.username.label(class="form-label") }}
+        {{ form.username(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.password.label(class="form-label") }}
+        {{ form.password(class="form-control") }}
+    </div>
+    <button type="submit" class="button success">Log In</button>
+</form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Edit Product - Farm to Table{% endblock %}
+{% block content %}
+<h1>Edit Product</h1>
+<form method="POST" action="{{ url_for('edit_product', product_id=product.id) }}" class="admin-form">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.name.label }}<br>
+        {{ form.name }}
+    </div>
+    <div class="form-group">
+        {{ form.description.label }}<br>
+        {{ form.description }}
+    </div>
+    <div class="form-group-inline">
+      {{ form.availability.label }}
+    <div class="form-group-inline-checkbox">
+        {{ form.availability }}
+    </div></div>
+    <div class="form-group">
+        {{ form.price.label }}<br>
+        {{ form.price }}
+    </div>
+    <button type="submit" class="button success">Save Changes</button>
+</form>
+{% endblock %}

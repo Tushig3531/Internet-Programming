@@ -1,0 +1,77 @@
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.field {
+    margin-bottom: 1.5rem;
+}
+
+.note {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-left: 5px solid;
+    background-color: rgba(44, 44, 44, 0.859);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.note strong {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.note small {
+    display: block;
+    margin-top: 0.5rem;
+    color: #bababa;
+}
+
+.deleteNote {
+    background: transparent;
+    border: none;
+    color: #d9534f;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    text-decoration: underline;
+}
+
+.deleteNote:hover {
+    text-decoration: none;
+}
+
+.box {
+    border: 2px solid #e0e0e0;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+}
+
+select,
+input,
+textarea {
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.control {
+    margin-top: 0.5rem;
+}
+
+.help {
+    font-size: 0.85rem;
+    color: #bababa;
+}

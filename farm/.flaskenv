@@ -1,0 +1,5 @@
+FLASK_APP=app.py
+FLASK_ENV=development
+SECRET_KEY=your_secret_key_here
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=12345

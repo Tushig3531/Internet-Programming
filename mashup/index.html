@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Roulette</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="container main-container">
+        <h1 class="text-center">Ria: What Should I Watch?</h1>
+        <p class="text-center text-muted">Can't decide on a movie? Let the wheel pick a random one for you!</p>
+
+        <div class="box shadow">
+            <form id="rouletteForm">
+                <!-- Genre Dropdown -->
+                <div class="mb-3">
+                    <label for="genreOptions" class="form-label">Genre</label>
+                    <select id="genreOptions" class="form-select">
+                        <option value="all">All Genres</option>
+                        <!-- Add other genres dynamically with JavaScript -->
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="imdbRating" class="form-label">TMDB Voting Average (0-10)</label>
+                    <input type="number" id="imdbRating" class="form-control" min="0" max="10" step="0.1" value="5">
+                </div>
+
+                <!-- Spin Button -->
+                <button type="button" class="btn btn-success w-100" id="spinButton">SPIN</button>
+            </form>
+        </div>
+
+        <!-- Display Result -->
+        <div id="displayResult" class="mt-4 text-center"></div>
+        <a href="savedMovies.html" class="btn btn-secondary mt-3">View Saved Movies</a>
+        
+        <div id="trailerContainer"></div>
+        <div id="castList"></div>
+        <div id="trailerContainer"></div>
+        <div id="castList"></div>
+    </div>
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

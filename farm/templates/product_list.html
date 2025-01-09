@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Products - Farm to Table{% endblock %}
+{% block content %}
+<h1>Our Products</h1>
+<div class="product-list">
+    {% for product in products %}
+        <div class="product-card">
+            <h2 class="product-title">{{ product.name }}</h2>
+            <p class="product-description">{{ product.description[:100] }}...</p>
+            <p class="product-price"><strong>Price:</strong> ${{ product.price }}</p>
+            {% if product.availability %}
+                <a href="{{ url_for('add_to_cart', product_id=product.id) }}" class="button success">Add to Cart</a>
+            {% else %}
+                <button class="button disabled" disabled>Unavailable</button>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

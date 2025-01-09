@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Movies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Saved Movies</h1>
+        <div id="savedMoviesContainer" class="mt-4"></div>
+        <a href="index.html" class="btn btn-primary mt-3">Back to Spin Page</a>
+    </div>
+    
+    <script>
+        function displaySavedMovies() {
+            const savedMovies = JSON.parse(localStorage.getItem('savedMovies')) || [];
+            const container = document.getElementById('savedMoviesContainer');
+
+            // Clear the container before displaying movies
+            container.innerHTML = ''; 
+
+            if (savedMovies.length === 0) {
+                container.innerHTML = '<p>No saved movies found.</p>';
+                return;
+            }
+
+            savedMovies.forEach(movie => {
+                const movieDiv = document.createElement('div');
+                movieDiv.classList.add('movie', 'mb-3');  // Added margin for spacing
+                
+                movieDiv.innerHTML = `
+                    <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} poster" style="width: 100px;">
+                    <div class="movie-details d-inline-block ms-3">  <!-- Add some margin to the right -->
+                        <h3>${movie.title} (${movie.release_date.split('-')[0]})</h3>
+                        <p>TMDB Voting Average: ${movie.vote_average.toFixed(1)}</p>
+                        <p>${movie.overview}</p>
+                    </div>
+                    <button class="btn btn-danger remove-btn" onclick="removeMovie(${movie.id})">Remove</button>
+                `;
+                container.appendChild(movieDiv);
+            });
+        }
+
+        function removeMovie(movieId) {
+            let savedMovies = JSON.parse(localStorage.getItem('savedMovies')) || [];
+            // Filter out the movie with the matching ID
+            savedMovies = savedMovies.filter(movie => movie.id !== movieId);  
+            localStorage.setItem('savedMovies', JSON.stringify(savedMovies)); // Save the updated list
+            displaySavedMovies();  // Refresh the movie list
+        }
+
+        window.onload = displaySavedMovies;
+    </script>
+</body>
+</html>

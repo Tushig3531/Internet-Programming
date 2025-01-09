@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Shopping Cart - Farm to Table{% endblock %}
+{% block content %}
+<h1>Your Shopping Cart</h1>
+{% if products %}
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>${{ product.price }}</td>
+                    <td>
+                        <a href="{{ url_for('remove_from_cart', product_id=product.id) }}" class="button danger">Remove</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p><strong>Total Items:</strong> {{ products|length }}</p>
+{% else %}
+    <p>Your cart is empty.</p>
+{% endif %}
+{% endblock %}
